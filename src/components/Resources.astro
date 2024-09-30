@@ -1,21 +1,11 @@
 ---
-// interface BodyLine {
-//   text: string;
-//   link?: string
-// }
-// interface AccordionItem{
-//   heading : string;
-//   body : BodyLine[];
-// }
 
-// import accordionJson from '../../public/jsonData/accordion.json'
-// const accordionData : AccordionItem[] = accordionJson;
 
 
 var accordionContent = await Astro.glob("../content/resourcesPage/*.md");
 ---
 <section class="bg-code items-center">
-    <div class="resources-main width-50">
+    <div class="resources-main backdrop-blur-xl">
         <div class="">
             <h1 class="section-title items-center text-center">Resources</h1>
             <h4>Candidates are encouraged to refer to the resources and get an overview of the suitable desktop application framework/technologies according to their tech stack. Candidates are also requested to contact us in case they need help finding resources for their tech stack for the workshop. </h4>
@@ -53,7 +43,8 @@ var accordionContent = await Astro.glob("../content/resourcesPage/*.md");
 .resources-main{
         margin: 3vh;
         width: 60%;
-       backdrop-filter: blur(19px);
+        overflow-y: hidden;
+       /* backdrop-filter: blur(19px); */
        background-color: rgba(255, 255, 255, 0.2);
     }
     .resources-heading h1{
@@ -110,8 +101,9 @@ var accordionContent = await Astro.glob("../content/resourcesPage/*.md");
 
   .answer{
     max-height: 0;
-    overflow: scroll;
+    overflow-y: scroll;
     transition: max-height 0.8s ease;
+    scrollbar-color: red red;
   }
 
   .answer ul li{

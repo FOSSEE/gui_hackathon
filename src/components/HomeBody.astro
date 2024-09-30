@@ -52,7 +52,7 @@ const faqContent = await Astro.glob("../content/faq/*.md");
 ---
 
 <!-- Introduction -->
-<main>
+<div>
     <Hero />
 <div class="bg-[#fff6ee] mx-4 px-4">
     <div class="md:px-20 px-3">
@@ -83,7 +83,7 @@ const faqContent = await Astro.glob("../content/faq/*.md");
 </div>
 
 <!-- Important Dates -->
- <div class="grid grid-cols-2 background-url">
+ <div class="grid md:grid-cols-2 background-url">
  <div>
 <Dates />
 </div>
@@ -205,7 +205,7 @@ const faqContent = await Astro.glob("../content/faq/*.md");
     </p>
 </div>
 
-</main>
+</div>
 <!-- CSS -->
 
   <style>
@@ -221,38 +221,7 @@ const faqContent = await Astro.glob("../content/faq/*.md");
     padding: 2rem 2rem;
 }
   
-    .significance-points{
-        padding: 0 8vw;
-    }
-
-    .significance-points p{
-        font-size: 2.3vh;
-    }
-    .significance-points li{
-        font-size: 2.3vh;
-    }
-    .significance-end{
-        font-size: 2.3vh;
-        padding: 0 5vw;
-        text-align: left;
-    }
-
-    .body-container{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        padding: 0 10vh;
-    }
-
-    .registration-container{
-        padding: 0 10vh;
-    }
-
-    .registration-container p{
-        text-align: center;
-        font-size: 2.5vh;
-        padding: 1vh 5vh;
-    }
+ 
     button {
   margin: 20px;
 }
@@ -305,151 +274,6 @@ const faqContent = await Astro.glob("../content/faq/*.md");
   top: 2px;
 }
     
-    .pno-container{
-        padding: 0 10vh;
-    }
-
-    .pno-container p{
-        text-align: left;
-        padding: 0 4vw;
-        font-size: 2.4vh;
-    }
-    .subheading{
-        font-weight: 700;
-    }
-
-    .faq-container{
-        padding: 0 10vh;
-    }
-
-    .faq-container h4{
-        font-size: 2.5vh;
-        padding: 1vh 9vh;
-        font-weight: 700;
-    }
-
-    .faq-container p{
-        font-size: 2.4vh;
-        padding: 1vh 9vh;
-        /* border-bottom: 1px solid rgb(116, 106, 106,0.4); */
-    }
-
-    .faq-container p span{
-        font-weight: 700;
-    }
-
-
-    .coreteam-container{
-        padding: 0 10vh;
-    }
-
-    .coreteam-container h1{
-        color: rgb(2, 2, 110);
-        font-size: 7.2vh;
-        /* font-family: 'Roboto Slab', serif !important; */
-        padding: 3vh 5vw;
-        text-align: center;
-        font-weight: 700;
-    }
-    
-    .coreteam-container h1 svg{
-        display: inline;
-    }
-    .coreteam-container h1:hover{
-        color: blue;
-    }
-    .coreteam-container p{
-        text-align: center;
-        font-size: 2.5vh;
-    }
-
-    .email{
-        text-align: center;
-        font-size: 2.5vh;
-        padding: 1vh 0;
-        font-weight: 500;
-    }
-    .email a{
-        text-decoration: none;
-        color: rgb(31, 104, 128);
-    }
-
-    .email a:hover{
-        color: blue;
-        text-decoration: underline;
-    }
-
-    .email svg{
-        display: inline;
-        margin: 0 1vh
-    }
-
-    .contact-us{
-        display: flex;
-        flex-direction: row;
-        justify-content: space-around;
-        padding: 2vh 1vw;
-        flex-wrap: wrap
-    }
-    
-    .teach{
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
-        align-items: center;
-        border: 1px solid rgb(206, 201, 201);
-        padding: 1vh 2vw;
-        border-radius: 11px;
-        margin: 1vh;
-        width: 45%;
-    }
-    .teach h4{
-        margin-bottom: 3vh;
-        /* font-family: 'Roboto Slab', serif !important; */
-        font-weight: bolder;
-        font-size: 2.5vh;
-        text-align: center;
-    }
-    .teach p{
-        font-size: 2.4vh;
-        font-weight: 600;
-    }
-    @media screen and (max-width: 800px) {
-        .intro, .coreteam-container h1{
-            font-size: 5vh;
-            text-align: center;
-        }
-        .welcome-heading{
-            font-size: 3.5vh;
-        }
-        .contact-us{
-            flex-direction: column;
-        }
-        .teach{
-            width: 100%;
-        }
-        .teach h4{
-            text-align: center;
-        }
-
-        .faq-container h4{
-            font-size: 2.2vh;
-            padding: 1vh 5vw;
-        }
-
-        .faq-container p{
-            font-size: 2.2vh;
-            padding: 0 5vw;
-        }
-
-        .faq-container p span{
-            font-weight: 700;
-        }
-
-        .faq-container, .pno-container, .body-container, .registration-container, .main-container{
-            padding: 0 5vw;
-        }
-    }
-
+  
   </style>
 
