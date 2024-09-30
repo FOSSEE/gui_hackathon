@@ -1,0 +1,112 @@
+---
+import navLinks from "./nav-links.json";
+---
+
+
+
+         
+  <nav class="float-end mb-3 py-2">
+   
+        <button class='inline-flex items-center justify-center md:hidden' data-collapse-toggle="main-navigation" type="button" aria-controls="main-navigation" aria-expanded="false">
+          <span class="sr-only">Open main menu</span>
+          <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
+          </svg>
+      </button>
+      <div class="hidden w-full items-end md:block menu-item" id="main-navigation">
+        <ul class="menu items-end justify-end bebas-neue-regular">
+          {
+            navLinks.map((link) => {
+              const { label, href } = link;
+  
+              return (
+                <li>
+                  <a class="nav-link text-brown-300 hover:text-red-600 transition duration-300" href={href}>{label}</a>
+                </li>
+              );
+            })
+          }
+        </ul>
+        
+      </div>
+   
+  </nav>
+ 
+  <style>
+    nav,
+    ul {
+      margin-bottom: 5px;
+      display: inline-block;
+      font-size: larger;
+  
+    }
+  
+    ul.menu li {
+      display: inline-block;
+      border-right: 2px solid rgb(156, 3, 3);
+      border-style: inset;
+      list-style: none;
+      padding: 0px 8px;
+    }
+  
+    @media only screen and (max-width: 600px;) {
+      nav,
+    ul {
+      display:block;
+    }
+  
+    ul.menu li {
+      display:block;
+    }
+    }
+    ul.menu li a{
+    text-decoration: none;
+    color:#6c5353;
+  }
+  ul.menu li:hover{
+  color: red;
+  /* background-color: purple; */
+    }
+  ul.menu li a:hover{
+    color:red;
+  }
+  .menu-item a.active{
+    color:#f70000 !important;
+    /* background-color: blue; */
+  }
+  ul.menu li:last-child{  
+    border-right: none;
+  }
+  /* ul.menu li:hover, */
+  /* a.active {color: aqua;} */
+  ul.menu li a.active{
+    color:#f70000;
+  }
+  </style>
+  
+  <script>
+   
+   document.addEventListener('astro:page-load', () => {
+  if(window.location.hash){
+  var currentUrl = window.location.pathname.replace(/\/+$/, '') + window.location.hash.replace(/\/+$/, '');
+  }
+  else{
+    var currentUrl = window.location.pathname.replace(/\/+$/, '');
+  }
+    var menuItems = document.querySelectorAll('.nav-link');
+  console.log(currentUrl);
+    menuItems.forEach(function(item) {
+
+      var menuItemUrl = item.getAttribute('href');
+  console.log(menuItemUrl);
+      if (currentUrl === menuItemUrl) {
+        item.classList.add('active');
+      } else {
+        item.classList.remove('active');
+      }
+    });
+   });
+
+
+  </script>
+  

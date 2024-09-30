@@ -1,0 +1,55 @@
+---
+// import { Icon } from 'astro-icon/components'
+
+// const { src = '/astronaut-hero-img.webp' } = Astro.props
+// const { fullhero = '../images/full_hero.png' } = Astro.props
+import fullhero from "../assets/img/right.png"
+
+import synfig from "../assets/img/left.png"
+---
+<!-------------#front section------------- -->
+<section class="hero">
+  <div class="">
+    <div class="grid grid-cols-1 items-center lg:grid-cols-2">
+      <div class="flex items-right ">
+        
+     
+
+
+          <img class="w-full" src={synfig.src} alt="Register" decoding="async" />
+      
+        <!-- <span class="text-gradient">CFD Hackathon</span> -->
+       
+      </div>
+      <div class="items-center flex w-full h-full">
+
+          <!-- <img class="lg:block" src={src} alt="" decoding="async" /> -->
+          <img class="w-full" src={fullhero.src} alt="coding" decoding="async" />
+        </div>
+    </div>
+  </div>
+</section>
+
+<style>
+    .hero{
+        background: url(../assets/img/bg-01.png);
+        background-attachment:scroll;
+        background-size: contain;
+        padding: 4em 4em;
+        height: auto;
+    }
+    
+  .text-gradient {
+    background: linear-gradient(315deg, var(--primary-200) 25%, var(--secondary-500));
+    background-clip: border-box;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  :global(.darkmode .text-gradient) {
+    background: linear-gradient(315deg, var(--primary-200) 25%, var(--secondary-400));
+    background-clip: border-box;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+</style>

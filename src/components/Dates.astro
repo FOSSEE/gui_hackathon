@@ -1,0 +1,61 @@
+---
+const dateContent = [
+{ name: "Registration Opens", description: "30th Sept 2024" },
+  { name: "Workshop", description: "21-22 Oct 2024" },
+  { name: "Problem Statement Announcement", description: "23rd Oct 2024" },
+  { name: "Submission Deadline", description: "22nd Nov 2024" },
+  { name: "Result Declaration", description: "13th Dec 2024" },
+  { name: "Internship Begins", description: "16th Dec 2024" }
+]
+
+---
+
+<div class="code-text text-center items-center">
+    <div class="text-xl inline-block">
+    <h1 class="typewriter section-title">Important Dates</h1>
+</div>
+    {
+       dateContent.map(date => (
+           
+                <ul>
+                    <li class="text-xl"><span class="string">{date.name}</span> : <span class="number">{date.description}</span></li>
+                 
+                </ul>
+           
+        ))
+    }
+   
+    
+    
+    
+    </div>
+    <style>
+.typewriter{
+ 
+  font-family: monospace;
+  overflow: hidden; 
+  border-right: .15em solid orange; 
+  white-space: nowrap;
+  width: 100%;
+  margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+   /*letter-spacing: ; Adjust as needed */
+  animation: 
+    typing 2s steps(16,end),
+    blink-caret .4s step-end infinite alternate;
+    cursor: wait;
+}
+
+/* The typing effect */
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: orange }
+}
+
+
+    </style>

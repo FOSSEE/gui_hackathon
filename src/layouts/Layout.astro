@@ -2,7 +2,10 @@
 interface Props {
 	title: string;
 }
+import Nav from '../components/layout/Nav.astro';
 
+
+import Footer from '../components/layout/Footer.astro';
 const { title } = Astro.props;
 ---
 
@@ -12,15 +15,52 @@ const { title } = Astro.props;
 		<meta charset="UTF-8" />
 		<meta name="description" content="Astro description" />
 		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" type="image/svg+xml" href="https://fossee.in/sites/all/themes/software_responsive_theme/img/logo.png" />
+   
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 	</head>
 	<body>
-		<slot />
+  
+</head>
+<body>
+  <div class=
+  "float-end fixed left-0 items-center w-full bg-white">
+
+    <Nav />
+
+  </div>
+<!-- <p class="code-text">
+  <span class="comment">// This is a comment</span><br>
+  <span class="keyword">let</span> <span class="string">name</span> = <span class="number">42</span>;
+</p> -->
+			<slot />
+
+
+		<Footer />
+    <script is:inline src="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.js"></script>
+
 	</body>
 </html>
 <style is:global>
+  .code-text {
+      font-family: monospace;
+      color: #333;
+  }
+
+  /* Default code colors */
+  .code-text .keyword { color: #007bff; }  /* Blue */
+  .code-text .string { color: #28a745; transition: 0.3s; }   /* Green */
+  .code-text .number { color: #dc3545; }   /* Red */
+  .code-text .comment { color: #6c757d; }  /* Grey */
+
+  /* Hover effect - changes colors */
+  .code-text:hover .keyword { color: #ff6347; }   /* Change blue to orange */
+  .code-text:hover .string { color: #ff1493; }    /* Change green to pink */
+  .code-text:hover .number { color: #ffa500; }    /* Change red to orange */
+  .code-text:hover .comment { color: #800080; }   /* Change grey to purple */
+
+  
 	:root {
 		--accent: 136, 58, 234;
 		--accent-light: 224, 204, 250;
@@ -29,13 +69,17 @@ const { title } = Astro.props;
 			45deg,
 			rgb(var(--accent)),
 			rgb(var(--accent-light)) 30%,
-			white 60%
+			rgb(0, 0, 0) 60%
 		);
 	}
 	html {
 		font-family: system-ui, sans-serif;
-		background: #13151a;
+		background: #ffffff;
+		color: #000000;
+    scroll-behavior: smooth;
+  
 	}
+ 
 	code {
 		font-family:
 			Menlo,
@@ -47,4 +91,96 @@ const { title } = Astro.props;
 			Courier New,
 			monospace;
 	}
+  .section-title{
+    color:#efd043;
+    text-shadow: 4px 4px #0a4850;
+    font-size: 5rem;
+    padding: 2rem 2rem;
+    font-weight: 700;
+    transition-delay: 0.6s;
+    
+}
+.section-title:hover{
+    color:#0a4850;
+    text-shadow: 4px 4px #efd043;
+    font-size: 5rem;
+    padding: 2rem 2rem;
+    font-weight: 700;
+   
+    
+}
 </style>
+<script lang="js">
+    // ======= Sticky
+document.addEventListener('DOMContentLoaded', function () {
+  window.onscroll = function () {
+    const ud_header = document.querySelector('.ud-header');
+    const sticky = ud_header.offsetTop;
+    const logo = document.querySelectorAll('.header-logo');
+
+    if (window.pageYOffset > sticky) {
+      ud_header.classList.add('sticky-header');
+      ud_header.classList.remove('absolute', 'bg-transparent', 'z-40');
+    } else {
+      ud_header.classList.remove('sticky-header');
+      ud_header.classList.add('absolute', 'bg-transparent', 'z-40');
+    }
+
+    if(logo.length) {
+      // === logo change
+      if (ud_header.classList.contains('sticky-header')) {
+        document.querySelector(".header-logo").src = '/assets/logo/logo.svg';
+      } else {
+        document.querySelector('.header-logo').src = '/assets/logo/logo-white.svg';
+      }
+    }
+
+    if (document.documentElement.classList.contains('dark')) {
+      if (logo.length) {
+        // === logo change
+        if (ud_header.classList.contains('sticky-header')) {
+          document.querySelector('.header-logo').src = '/assets/logo/logo-white.svg';
+        } 
+      }
+    }
+
+    // show or hide the back-top-top button
+    const backToTop = document.querySelector('.back-to-top');
+    if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+      backToTop.style.display = 'flex';
+    } else {
+      backToTop.style.display = 'none';
+    }
+  };
+});
+// ====== scroll top js
+function scrollTo(element, to = 0, duration = 500) {
+  const start = element.scrollTop;
+  const change = to - start;
+  const increment = 20;
+  let currentTime = 0;
+
+  const animateScroll = () => {
+    currentTime += increment;
+
+    const val = Math.easeInOutQuad(currentTime, start, change, duration);
+
+    element.scrollTop = val;
+
+    if (currentTime < duration) {
+      setTimeout(animateScroll, increment);
+    }
+  };
+
+  animateScroll();
+}
+
+Math.easeInOutQuad = function (t, b, c, d) {
+  t /= d / 2;
+  if (t < 1) return (c / 2) * t * t + b;
+  t--;
+  return (-c / 2) * (t * (t - 2) - 1) + b;
+};
+
+document.querySelector(".back-to-top").onclick = () => { scrollTo(document.documentElement); };
+</script>

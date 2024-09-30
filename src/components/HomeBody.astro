@@ -1,0 +1,455 @@
+---
+const props = Astro.props
+// import Carousel from './Carousel.astro'
+// import 'bootstrap/dist/css/bootstrap.css'
+// import faqJson from '../../public/jsonData/faq.json'
+// import homeJson from '../../public/jsonData/home.json'
+
+// interface Coreteam{
+//     name : string;
+//     position : string[];
+//     institute : string;
+// }
+
+// interface Significance{
+//     intro : string;
+//     point: string[];
+//     end: string;
+// }
+
+// interface PartnerAndOrganisations{
+//     name: string;
+//     description: string;
+// }
+
+// interface Faq{
+//     question: string;
+//     answer: string;
+// }
+
+// interface Home{
+//     significance: Significance[];
+//     purpose: string[];
+//     partners: PartnerAndOrganisations[];
+//     coreteam: Coreteam[];
+// }
+
+// const homeData : Home = homeJson;
+// const faqData : Faq[] = faqJson;
+
+//importing content from markdown files
+import Dates from "./Dates.astro";
+import Faq from "./Faq.astro";
+import Resources from "./Resources.astro";
+import Hero from "./Hero.astro";
+const paraContent = await Astro.glob("../content/aboutpara/*.md");
+// const dateContent = await Astro.glob("../content/dates/*.md");
+const coreTeamContent = await Astro.glob("../content/homePage/coreTeam/*.md");
+const partnerContent = await Astro.glob("../content/homePage/partner/*.md");
+const purposeContent = await Astro.glob("../content/homePage/purpose/*.md");
+const significanceContent = await Astro.glob("../content/homePage/significance/*.md");
+const faqContent = await Astro.glob("../content/faq/*.md");
+---
+
+<!-- Introduction -->
+<main>
+    <Hero />
+<div class="bg-[#fff6ee] mx-4 px-4">
+    <div class="md:px-20 px-3">
+    <h1 class="text-4xl font-bold item-center text-center section-title mx-4 px-4" id="about">About</h1>
+    <!-- <h2 class="welcome-heading"> Welcome to the Open Source Hardware IoT GIS Hackathon!</h2> -->
+    {paraContent.map((point) => {
+        return ( <p class="text-xl text-justify"> {point.frontmatter.para}</p>)})}
+
+
+    <h1 class="font-bold text-2xl">Benefits:</h1>{
+    significanceContent.map((point) => {
+        return (
+                <ul class="significance-points" style="list-style-type: square;">
+                    {/* <p>{point.frontmatter.intro}</p> */}
+                    {
+                        point.frontmatter.point.map((p:string) => {
+                            return (
+                                <li>{p}</li>
+                            )
+                        })
+                    }
+                </ul>
+                // <p class="significance-end">{point.frontmatter.end}</p>
+            )
+        })
+        }
+        </div>
+</div>
+
+<!-- Important Dates -->
+ <div class="grid grid-cols-2 background-url">
+ <div>
+<Dates />
+</div>
+<!-- Registration -->
+
+<div class="registration-container" id ="register">
+    <h1 class="text-4xl font-bold item-center text-center section-title">Registration</h1>
+    <p>Please click on the following button to register yourself for the Hackathon</p>
+    <div class="items-center text-center">
+        <button class="custom-btn btn-15"> <a href="https://forms dile/aVopwiwmRM35FXQT8" target="_blank">Register</a></button>
+           
+        
+    </div>
+</div>
+</div>
+<!-- Eligibility  -->
+<div class="registration-container" id ="eligibility">
+    <h1 class="text-4xl font-bold item-center text-center section-title">Eligibility</h1>
+   
+    <div class="regBtnContainer">
+        <p class="text-justify">Students pursuing B.E./B.Tech/M.Tech who seek to apply their programming skills in the development of scientifc software. While having a background in Computer Scienc and Engineering/Information Technology or related fields with programming skills is preferable, we also consider students from other areas (ME, AE, EE, ECE etc.)</p>
+    </div>
+</div>
+
+
+<!-- <Faq /> -->
+<!-- Significance -->
+
+<!-- <div class="body-container">
+    <h1 class="intro" id = "purpose">Purpose</h1>{
+        purposeContent.map((point) => {
+            return (
+                <p class="significance-end">{point.frontmatter.desc}</p>
+            )
+        })
+    }
+</div> -->
+
+
+
+
+<!-- Partners and Organisers -->
+
+<!-- <div class="pno-container" id = "partners">
+    <h1 class="intro">Partner and Organisers</h1>
+    <div class="tech-imgs">
+       
+    </div>{
+        partnerContent.map((partner) => {
+            return (
+                <p>
+                    <span class="subheading">{partner.frontmatter.name}</span>
+                    {partner.frontmatter.description}
+                </p>
+            )
+        })
+    }
+</div> -->
+
+
+
+<!-- FAQ -->
+
+<div class="cursor-help" id = "faq">
+    <h1 class="text-5xl font-bold items-center section-title text-center">Frequently Asked Questions (FAQ)</h1>
+    <div class="grid lg:grid-cols-2" >{
+        faqContent.map((faq,index) => {
+            return (
+               
+                <div class="border-2 border-l-8 rounded-xl border-yellow-400 p-2 m-2 hover:shadow-indigo-300 shadow-lg transi h-32 overflow-y-scroll">
+                <h4 class="font-bold">{index + 1}. {faq.frontmatter.question}</h4>
+                <p> <span>Answer: </span>{faq.frontmatter.answer}</p>
+                </div>
+              
+            )
+        })
+    }
+      </div>
+</div>
+
+
+<Resources />
+
+<!-- Core Team and Contact Us -->
+
+<div class="bg-indigo-100 text-center" id ="contact">
+    <h1 class="section-title text-center">Contact Us
+        <!-- <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24">
+        <path fill="currentColor" d="M4.05 21q-.45 0-.75-.3t-.3-.75V15.9q0-.325.225-.587t.575-.363l3.45-.7q.35-.05.713.063t.587.337L10.9 17q.95-.55 1.8-1.213t1.625-1.437q.825-.8 1.513-1.662t1.187-1.788L14.6 8.45q-.2-.2-.275-.475T14.3 7.3l.65-3.5q.05-.325.325-.562T15.9 3h4.05q.45 0 .75.3t.3.75q0 3.125-1.362 6.175t-3.863 5.55t-5.55 3.863T4.05 21" />
+    </svg> -->
+</h1>
+   <!-- <div class="contact-us">{
+        coreTeamContent.map((member) => {
+            return (
+                <div class="teach">
+                    <h4>{member.frontmatter.name}</h4>
+                    {member.frontmatter.position.map((pos:string) => {
+                        return (
+                            <p>{pos}</p>
+                        )
+                    })}
+                    <p>{member.frontmatter.institute}</p>
+                </div>
+            )
+        })
+        }
+    </div>-->
+    <p>
+        Please write to us in case of any queries regarding the Hackathon at:
+    </p>
+    <p class="email">
+        <svg xmlns="http://www.w3.org/2000/svg" class="!inline-block" width="32" height="32" viewBox="0 0 32 32" {...props}>
+            <path fill="black" class="!inline-block" d="M28 6H4a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h24a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2m-2.2 2L16 14.78L6.2 8ZM4 24V8.91l11.43 7.91a1 1 0 0 0 1.14 0L28 8.91V24Z" />
+        </svg>
+        Email : 
+        <a href="mailto:contact-cfd@fossee.in" target="_blank">contact-cfd@fossee.in</a>
+        <!-- / -->
+        <!-- <a href="mailto:mohamedkasim@iitb.ac.in" target="_blank">mohamedkasim@iitb.ac.in</a> -->
+    </p>
+</div>
+
+</main>
+<!-- CSS -->
+
+  <style>
+    .background-url{
+        background: url(../assets/img/bg-01.png);
+        background-attachment: fixed;
+    }
+.section-title{
+    color:#efd043;
+    text-shadow: 4px 4px #0a4850;
+    font-size: 5rem;
+    font-weight: 700;
+    padding: 2rem 2rem;
+}
+  
+    .significance-points{
+        padding: 0 8vw;
+    }
+
+    .significance-points p{
+        font-size: 2.3vh;
+    }
+    .significance-points li{
+        font-size: 2.3vh;
+    }
+    .significance-end{
+        font-size: 2.3vh;
+        padding: 0 5vw;
+        text-align: left;
+    }
+
+    .body-container{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 0 10vh;
+    }
+
+    .registration-container{
+        padding: 0 10vh;
+    }
+
+    .registration-container p{
+        text-align: center;
+        font-size: 2.5vh;
+        padding: 1vh 5vh;
+    }
+    button {
+  margin: 20px;
+}
+.custom-btn {
+  color: #0a4850;
+  width: 130px;
+  height: 40px;
+  padding: 10px 25px;
+  font-family: 'Lato', sans-serif;
+  font-weight: 500;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
+}
+
+    .btn-15 {
+  color: #ffcc00;
+  border: 2px solid#000000;
+  border-radius: 6px;
+  box-shadow: 0 0 5px #ffcc00, 0 0 5px #ffcc00 inset;
+  z-index: 1;
+  
+}
+.btn-15:after {
+  position: absolute;
+  content: "";
+  width: 0;
+  height: 100%;
+  top: 0;
+  right: 0;
+ z-index: -1;
+  background: #ffcc00;
+  box-shadow:
+   0 0 20px  #ffcc00;
+  transition: all 0.3s ease;
+  
+}
+.btn-15:hover {
+  color: #0a4850;
+  font-weight: 600;
+  transition: 2s;
+}
+.btn-15:hover:after {
+  left: 0;
+  width: 100%;
+}
+.btn-15:active {
+  top: 2px;
+}
+    
+    .pno-container{
+        padding: 0 10vh;
+    }
+
+    .pno-container p{
+        text-align: left;
+        padding: 0 4vw;
+        font-size: 2.4vh;
+    }
+    .subheading{
+        font-weight: 700;
+    }
+
+    .faq-container{
+        padding: 0 10vh;
+    }
+
+    .faq-container h4{
+        font-size: 2.5vh;
+        padding: 1vh 9vh;
+        font-weight: 700;
+    }
+
+    .faq-container p{
+        font-size: 2.4vh;
+        padding: 1vh 9vh;
+        /* border-bottom: 1px solid rgb(116, 106, 106,0.4); */
+    }
+
+    .faq-container p span{
+        font-weight: 700;
+    }
+
+
+    .coreteam-container{
+        padding: 0 10vh;
+    }
+
+    .coreteam-container h1{
+        color: rgb(2, 2, 110);
+        font-size: 7.2vh;
+        /* font-family: 'Roboto Slab', serif !important; */
+        padding: 3vh 5vw;
+        text-align: center;
+        font-weight: 700;
+    }
+    
+    .coreteam-container h1 svg{
+        display: inline;
+    }
+    .coreteam-container h1:hover{
+        color: blue;
+    }
+    .coreteam-container p{
+        text-align: center;
+        font-size: 2.5vh;
+    }
+
+    .email{
+        text-align: center;
+        font-size: 2.5vh;
+        padding: 1vh 0;
+        font-weight: 500;
+    }
+    .email a{
+        text-decoration: none;
+        color: rgb(31, 104, 128);
+    }
+
+    .email a:hover{
+        color: blue;
+        text-decoration: underline;
+    }
+
+    .email svg{
+        display: inline;
+        margin: 0 1vh
+    }
+
+    .contact-us{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        padding: 2vh 1vw;
+        flex-wrap: wrap
+    }
+    
+    .teach{
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        border: 1px solid rgb(206, 201, 201);
+        padding: 1vh 2vw;
+        border-radius: 11px;
+        margin: 1vh;
+        width: 45%;
+    }
+    .teach h4{
+        margin-bottom: 3vh;
+        /* font-family: 'Roboto Slab', serif !important; */
+        font-weight: bolder;
+        font-size: 2.5vh;
+        text-align: center;
+    }
+    .teach p{
+        font-size: 2.4vh;
+        font-weight: 600;
+    }
+    @media screen and (max-width: 800px) {
+        .intro, .coreteam-container h1{
+            font-size: 5vh;
+            text-align: center;
+        }
+        .welcome-heading{
+            font-size: 3.5vh;
+        }
+        .contact-us{
+            flex-direction: column;
+        }
+        .teach{
+            width: 100%;
+        }
+        .teach h4{
+            text-align: center;
+        }
+
+        .faq-container h4{
+            font-size: 2.2vh;
+            padding: 1vh 5vw;
+        }
+
+        .faq-container p{
+            font-size: 2.2vh;
+            padding: 0 5vw;
+        }
+
+        .faq-container p span{
+            font-weight: 700;
+        }
+
+        .faq-container, .pno-container, .body-container, .registration-container, .main-container{
+            padding: 0 5vw;
+        }
+    }
+
+  </style>
+
