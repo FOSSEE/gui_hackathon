@@ -69,7 +69,7 @@ var accordionContent = await Astro.glob("../content/resourcesPage/*.md");
     display: flex;
     flex-direction: column;
     margin : 0 auto;
-    /* width: 60%; */
+    width: 100% !important; 
   }
 
   .faq{
@@ -150,9 +150,7 @@ var accordionContent = await Astro.glob("../content/resourcesPage/*.md");
   }
 
   @media screen and (max-width: 768px){
-    section{
-      width: 90%;
-    }
+   
     .answer p{
       padding: 0.4vh 3vh;
       font-size: 1rem;
