@@ -52,14 +52,14 @@ const faqContent = await Astro.glob("../content/faq/*.md");
 ---
 
 <!-- Introduction -->
-<div>
+<div id="home">
     <Hero />
 <div class="bg-[#fff6ee] mx-4 px-4">
     <div class="md:px-20 px-3">
-    <h1 class="text-4xl font-bold item-center text-center section-title mx-4 px-4" id="about">About</h1>
+    <h1 class="md:text-xl font-bold item-center text-center section-title mx-4 px-4" id="about">About</h1>
     <!-- <h2 class="welcome-heading"> Welcome to the Open Source Hardware IoT GIS Hackathon!</h2> -->
     {paraContent.map((point) => {
-        return ( <p class="text-xl text-justify"> {point.frontmatter.para}</p>)})}
+        return ( <p class="md:text-xl text-sm text-justify"> {point.frontmatter.para}</p>)})}
 
 
     <h1 class="font-bold text-2xl">Benefits:</h1>{
@@ -104,7 +104,7 @@ const faqContent = await Astro.glob("../content/faq/*.md");
     <h1 class="text-4xl font-bold item-center text-center section-title">Eligibility</h1>
    
     <div class="regBtnContainer">
-        <p class="text-justify">Students pursuing B.E./B.Tech/M.Tech who seek to apply their programming skills in the development of scientifc software. While having a background in Computer Scienc and Engineering/Information Technology or related fields with programming skills is preferable, we also consider students from other areas (ME, AE, EE, ECE etc.)</p>
+        <p class="text-2xl text-justify mx-3 px-3">Students pursuing B.E./B.Tech/M.Tech who seek to apply their programming skills in the development of scientifc software. While having a background in Computer Scienc and Engineering/Information Technology or related fields with programming skills is preferable, we also consider students from other areas (ME, AE, EE, ECE etc.)</p>
     </div>
 </div>
 
@@ -220,7 +220,12 @@ const faqContent = await Astro.glob("../content/faq/*.md");
     font-weight: 700;
     padding: 2rem 2rem;
 }
-  
+  @media screen and (max-width: 983px) {
+.section-title{
+    font-size:2rem;
+    text-shadow: 2px 2px #0a4850;
+}    
+  }
  
     button {
   margin: 20px;

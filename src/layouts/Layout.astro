@@ -94,11 +94,15 @@ const { title } = Astro.props;
     color:#efd043;
     text-shadow: 4px 4px #0a4850;
     font-size: 5rem;
-    padding: 2rem 2rem;
     font-weight: 700;
-    transition-delay: 0.6s;
-    
+    padding: 2rem 2rem;
 }
+  @media screen and (max-width: 983px) {
+.section-title{
+    font-size:2rem;
+    text-shadow: 2px 2px #0a4850;
+}    
+  }
 .section-title:hover{
     color:#0a4850;
     text-shadow: 4px 4px #efd043;
