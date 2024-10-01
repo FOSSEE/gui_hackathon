@@ -1,15 +1,18 @@
 ---
+import iitb from "../../assets/img/IITB.png";
+import fossee from "../../assets/img/FOSSEE.png";
+import st from "../../assets/img/spoken.png";
 ---
-<h2 class="text-center text-3xl font-bold mb-6 text-teal-700">----ORGANISERS----</h2>
+<h2 class="text-center text-3xl font-bold mb-6 text-teal-700  hr-lines">ORGANISERS</h2>
 <footer class="bg-gray-900 text-white mt-8 pb-8">
     <!-- Organizers Section -->
     
       
       <div class="max-w-6xl mx-auto px-4">
-      <div class="flex justify-center space-x-10 mb-6 bg-white text-green-300 rounded-b-2xl">
-        <img src="https://www.iitb.ac.in/sites/www.iitb.ac.in/themes/tweme/logo.png" alt="IIT Bombay" class="h-16">
-        <img src="https://fossee.in/sites/default/files/logo_0.png" alt="FOSSEE" class="h-16">
-        <img src="https://spoken-tutorial.org/images/spoken-tutorial-logo.png" alt="Spoken Tutorial" class="h-16">
+      <div class="flex justify-center items-center space-x-3 mb-6 bg-white text-green-300 rounded-b-2xl">
+        <img  src={iitb.src} alt="IIT Bombay"  decoding="async">
+        <img src={fossee.src} alt="FOSSEE"  decoding="async">
+        <img src={st.src} alt="Spoken Tutorial"  decoding="async">
       </div>
 
       <!-- Social Media & Contact Info -->
@@ -18,10 +21,10 @@
         <div class="space-y-2">
           <p class="font-semibold">Follows us:</p>
           <div class="flex space-x-4">
-            <a href="#"><img src="https://img.icons8.com/ios-filled/50/ffffff/facebook--v1.png"  alt="Facebook" class="h-6 bg-[#0866ff] grayscale hover:grayscale-0"></a>
-            <a href="#"><img src="https://img.icons8.com/ios-filled/50/ffffff/twitter--v1.png" alt="Twitter" class="h-6 bg-[#1da1f2] grayscale hover:grayscale-0"></a>
-            <a href="#"><img src="https://img.icons8.com/ios-filled/50/ffffff/instagram-new--v1.png" alt="Instagram" class="h-6 instagram grayscale hover:grayscale-0"></a>
-            <a href="#"><img src="https://img.icons8.com/ios-filled/50/ffffff/linkedin--v1.png" alt="LinkedIn" class="h-6 bg-[#52abd5] grayscale hover:grayscale-0"></a>
+            <a href="https://www.facebook.com/FOSSEENMEICT/"><img src="https://img.icons8.com/ios-filled/50/ffffff/facebook--v1.png"  alt="Facebook" class="h-6 bg-[#0866ff] grayscale hover:grayscale-0"></a>
+            <a href="https://twitter.com/FOSSEE/"><img src="https://img.icons8.com/ios-filled/50/ffffff/twitter--v1.png" alt="Twitter" class="h-6 bg-[#1da1f2] grayscale hover:grayscale-0"></a>
+            <a href="https://www.instagram.com/fossee_nmeict/"><img src="https://img.icons8.com/ios-filled/50/ffffff/instagram-new--v1.png" alt="Instagram" class="h-6 instagram grayscale hover:grayscale-0"></a>
+            <a href="https://www.linkedin.com/company/fossee-iitb/"><img src="https://img.icons8.com/ios-filled/50/ffffff/linkedin--v1.png" alt="LinkedIn" class="h-6 bg-[#52abd5] grayscale hover:grayscale-0"></a>
           </div>
         </div>
 
@@ -49,4 +52,31 @@
     #833ab4,#fd1d1d,#fcb045
   );
     }
+    .hr-lines:before{
+  content:" ";
+  display: block;
+  height: 3px;
+  width: 130px;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  background: #036672;
+}
+.hr-lines{
+  position: relative;
+  /*  new lines  */
+  max-width: 500px;
+  margin: 2rem auto;
+  text-align: center;
+}
+.hr-lines:after{
+  content:" ";
+  height: 3px;
+  width: 130px;
+  background: #036672;
+  display: block;
+  position: absolute;
+  top: 50%;
+  right: 0;
+}
   </style>

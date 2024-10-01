@@ -39,7 +39,7 @@ const props = Astro.props
 
 //importing content from markdown files
 import Dates from "./Dates.astro";
-import Faq from "./Faq.astro";
+
 import Resources from "./Resources.astro";
 import Hero from "./Hero.astro";
 const paraContent = await Astro.glob("../content/aboutpara/*.md");
@@ -93,20 +93,13 @@ const faqContent = await Astro.glob("../content/faq/*.md");
     <h1 class="text-4xl font-bold item-center text-center section-title">Registration</h1>
     <p class="text-center">Please click on the following button to register yourself for the Hackathon</p>
     <div class="items-center text-center">
-        <button class="custom-btn btn-15"> <a href="https://forms dile/aVopwiwmRM35FXQT8" target="_blank">Register</a></button>
+        <button class="custom-btn btn-15"> <a href="https://docs.google.com/forms/d/e/1FAIpQLSeuAU18u2mXkVZLxPeOyxfylcEn3GXYGmVdSsg37bPsUlUahw/viewform?usp=pp_url" target="_blank">Register</a></button>
            
         
     </div>
 </div>
 </div>
-<!-- Eligibility  -->
-<div class="registration-container text-[#4d0081] border-b-4 border-sky-100 background-url" id ="eligibility">
-    <h1 class="text-4xl font-bold item-center text-center section-title">Eligibility</h1>
-   
-    <div class="regBtnContainer">
-        <p class="text-lg text-justify mx-3 px-3">Students pursuing B.E./B.Tech/M.Tech who seek to apply their programming skills in the development of scientifc software. While having a background in Computer Scienc and Engineering/Information Technology or related fields with programming skills is preferable, we also consider students from other areas (ME, AE, EE, ECE etc.)</p>
-    </div>
-</div>
+
 
 
 <!-- <Faq /> -->
@@ -147,25 +140,10 @@ const faqContent = await Astro.glob("../content/faq/*.md");
 
 <!-- FAQ -->
 
-<div class="cursor-help" id = "faq">
-    <h1 class="text-5xl font-bold items-center section-title text-center">Frequently Asked Questions (FAQ)</h1>
-    <div class="grid lg:grid-cols-2" >{
-        faqContent.map((faq,index) => {
-            return (
-               
-                <div class="border-2 border-l-8 rounded-xl border-yellow-400 p-2 m-2 hover:shadow-indigo-300 shadow-lg transi h-32 overflow-y-scroll">
-                <h4 class="font-bold">{index + 1}. {faq.frontmatter.question}</h4>
-                <p> <span>Answer: </span>{faq.frontmatter.answer}</p>
-                </div>
-              
-            )
-        })
-    }
-      </div>
-</div>
 
 
-<Resources />
+
+<!-- <Resources /> -->
 
 <!-- Core Team and Contact Us -->
 
@@ -220,7 +198,7 @@ const faqContent = await Astro.glob("../content/faq/*.md");
 }
 .custom-btn {
   color: #0a4850;
-  width: 130px;
+  width: 160px;
   height: 40px;
   padding: 10px 25px;
   font-family: 'Lato', sans-serif;
@@ -233,11 +211,14 @@ const faqContent = await Astro.glob("../content/faq/*.md");
 }
 
     .btn-15 {
-  color: #ffcc00;
+  color: #534300;
   border: 2px solid#000000;
-  border-radius: 6px;
+  border-radius: 18px;
+  background: #fffdf3;
   box-shadow: 0 0 5px #ffcc00, 0 0 5px #ffcc00 inset;
   z-index: 1;
+  font-weight: 500;
+  transition: 0.3s ease;
   
 }
 .btn-15:after {
@@ -249,6 +230,7 @@ const faqContent = await Astro.glob("../content/faq/*.md");
   right: 0;
  z-index: -1;
   background: #ffcc00;
+  border-radius: 18px;
   box-shadow:
    0 0 20px  #ffcc00;
   transition: all 0.3s ease;
@@ -257,7 +239,7 @@ const faqContent = await Astro.glob("../content/faq/*.md");
 .btn-15:hover {
   color: #0a4850;
   font-weight: 600;
-  transition: 2s;
+  
 }
 .btn-15:hover:after {
   left: 0;

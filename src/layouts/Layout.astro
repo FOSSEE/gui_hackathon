@@ -29,11 +29,14 @@ const { title } = Astro.props;
 
 
     <Nav />
-    <div class="w-full">
+    <div class="w-full block md:pt-10">
 
       <slot />
     </div>
-		<Footer />
+    <!-- <div class="fixed bottom-0 w-full"> -->
+
+      <Footer />
+    <!-- </div> -->
     <script is:inline src="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.js"></script>
 
 	</body>
@@ -41,6 +44,7 @@ const { title } = Astro.props;
 <style is:global>
   body{
     overflow-x: hidden;
+    /* margin-bottom:30em; */
   }
   .code-text {
       font-family: monospace;
