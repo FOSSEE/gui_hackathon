@@ -1,0 +1,7 @@
+@font-face {
+    font-family: myFirstFont;
+    src: url(../font/Aller/Aller_Rg.ttf);
+ }
+ *{
+    font-family:myFirstFONT;
+ }

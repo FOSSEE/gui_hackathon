@@ -3,7 +3,7 @@ interface Props {
 	title: string;
 }
 import Nav from '../components/layout/Nav.astro';
-
+import'../assets/css/custom.css';
 
 import Footer from '../components/layout/Footer.astro';
 const { title } = Astro.props;
@@ -49,8 +49,8 @@ const { title } = Astro.props;
 
   /* Default code colors */
   .code-text .keyword { color: #007bff; }  /* Blue */
-  .code-text .string { color: #28a745; transition: 0.3s; }   /* Green */
-  .code-text .number { color: #dc3545; }   /* Red */
+  .code-text .string { color: #dc3545; transition: 2s;}   /* Green */
+  .code-text .number { color: #28a745; transition: 2s;}   /* Red */
   .code-text .comment { color: #6c757d; }  /* Grey */
 
   /* Hover effect - changes colors */
@@ -91,27 +91,37 @@ const { title } = Astro.props;
 			monospace;
 	}
   .section-title{
+   
     color:#efd043;
-    text-shadow: 4px 4px #0a4850;
-    font-size: 5rem;
+    color:#0a4850;
+    /* text-shadow: 4px 4px #0a4850; */
+    font-size: 3rem;
     font-weight: 700;
     padding: 2rem 2rem;
+    transition: 1.3s;
 }
-  @media screen and (max-width: 983px) {
-.section-title{
-    font-size:2rem;
-    text-shadow: 2px 2px #0a4850;
-}    
-  }
 .section-title:hover{
-    color:#0a4850;
-    text-shadow: 4px 4px #efd043;
-    font-size: 5rem;
-    padding: 2rem 2rem;
+    
+    /* text-shadow: 4px 4px #efd043; */
+    font-size: 3.09rem;
+    /* padding: 2rem 1rem; */
     font-weight: 700;
    
     
 }
+  @media screen and (max-width: 983px) {
+.section-title{
+    font-size:2rem;
+    padding: 1rem 2rem;
+    /* text-shadow: 2px 2px #0a4850; */
+}  
+.section-title:hover{
+  font-size: 2rem;
+    padding: 1rem 2rem;
+    font-weight: 700;
+}  
+  }
+
 </style>
 <script lang="js">
     // ======= Sticky

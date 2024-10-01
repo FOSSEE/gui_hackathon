@@ -54,18 +54,18 @@ const faqContent = await Astro.glob("../content/faq/*.md");
 <!-- Introduction -->
 <div id="home">
     <Hero />
-<div class="bg-[#fff6ee] mx-4 px-4">
+<div class="bg-[#fff6ee] md:mx-4 md:px-4">
     <div class="md:px-20 px-3">
     <h1 class="md:text-xl font-bold item-center text-center section-title mx-4 px-4" id="about">About</h1>
     <!-- <h2 class="welcome-heading"> Welcome to the Open Source Hardware IoT GIS Hackathon!</h2> -->
     {paraContent.map((point) => {
-        return ( <p class="md:text-xl text-sm text-justify"> {point.frontmatter.para}</p>)})}
+        return ( <p class="md:text-lg text-sm text-justify"> {point.frontmatter.para}</p>)})}
 
 
-    <h1 class="font-bold text-2xl">Benefits:</h1>{
+    <h1 class="font-bold text-xl">Benefits:</h1>{
     significanceContent.map((point) => {
         return (
-                <ul class="significance-points" style="list-style-type: square;">
+                <ul class="md:pl-6 pl-3 list-disc" >
                     {/* <p>{point.frontmatter.intro}</p> */}
                     {
                         point.frontmatter.point.map((p:string) => {
@@ -91,7 +91,7 @@ const faqContent = await Astro.glob("../content/faq/*.md");
 
 <div class="registration-container" id ="register">
     <h1 class="text-4xl font-bold item-center text-center section-title">Registration</h1>
-    <p>Please click on the following button to register yourself for the Hackathon</p>
+    <p class="text-center">Please click on the following button to register yourself for the Hackathon</p>
     <div class="items-center text-center">
         <button class="custom-btn btn-15"> <a href="https://forms dile/aVopwiwmRM35FXQT8" target="_blank">Register</a></button>
            
@@ -100,11 +100,11 @@ const faqContent = await Astro.glob("../content/faq/*.md");
 </div>
 </div>
 <!-- Eligibility  -->
-<div class="registration-container" id ="eligibility">
+<div class="registration-container text-[#4d0081] border-b-4 border-sky-100 background-url" id ="eligibility">
     <h1 class="text-4xl font-bold item-center text-center section-title">Eligibility</h1>
    
     <div class="regBtnContainer">
-        <p class="text-2xl text-justify mx-3 px-3">Students pursuing B.E./B.Tech/M.Tech who seek to apply their programming skills in the development of scientifc software. While having a background in Computer Scienc and Engineering/Information Technology or related fields with programming skills is preferable, we also consider students from other areas (ME, AE, EE, ECE etc.)</p>
+        <p class="text-lg text-justify mx-3 px-3">Students pursuing B.E./B.Tech/M.Tech who seek to apply their programming skills in the development of scientifc software. While having a background in Computer Scienc and Engineering/Information Technology or related fields with programming skills is preferable, we also consider students from other areas (ME, AE, EE, ECE etc.)</p>
     </div>
 </div>
 
@@ -213,19 +213,7 @@ const faqContent = await Astro.glob("../content/faq/*.md");
         background: url(../assets/img/bg-01.png);
         background-attachment: fixed;
     }
-.section-title{
-    color:#efd043;
-    text-shadow: 4px 4px #0a4850;
-    font-size: 5rem;
-    font-weight: 700;
-    padding: 2rem 2rem;
-}
-  @media screen and (max-width: 983px) {
-.section-title{
-    font-size:2rem;
-    text-shadow: 2px 2px #0a4850;
-}    
-  }
+
  
     button {
   margin: 20px;
