@@ -23,14 +23,18 @@ var links = await Astro.glob("../content/resourcesPage/*.md");
           </svg> 
       </div>
       <div class="answer overflow-scroll h-32">
-        <Content target="_blank" />
-        {/* {
-                        item.frontmatter.item.map((p:string) => {
-                            return (
-                                <li><a href={p}>{p}</a></li>
-                            )
-                        })
-                    } */}
+        {/* <Content /> */}
+        {item.frontmatter.item && (
+            <ul class="list-disc ml-5 mt-2">
+              {item.frontmatter.item.map((p:any) => (
+                <li >
+                  <a href={p.link} class="text-blue-500 hover:underline" target="_blank">
+                    {p.name}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          )}
       </div>
     </div>
    )})
