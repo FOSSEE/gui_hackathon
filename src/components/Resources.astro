@@ -1,6 +1,9 @@
 ---
+const props = Astro.props
 var accordionContent = await Astro.glob("../content/resourcesPage/*.md");
+var links = await Astro.glob("../content/resourcesPage/*.md");
 ---
+<!-- <base target="_blank"> -->
 <section class="bg-code items-center">
     <div class="resources-main backdrop-blur-xl">
         <div class="">
@@ -20,17 +23,26 @@ var accordionContent = await Astro.glob("../content/resourcesPage/*.md");
           </svg> 
       </div>
       <div class="answer overflow-scroll h-32">
-        <Content/>
+        <Content target="_blank" />
+        {/* {
+                        item.frontmatter.item.map((p:string) => {
+                            return (
+                                <li><a href={p}>{p}</a></li>
+                            )
+                        })
+                    } */}
       </div>
     </div>
    )})
  }
+
  </div>
  </div>
 </section>
 
 
 <style>
+  
   .section-title{
     color: #0077ff;
   }
