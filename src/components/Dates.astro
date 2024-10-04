@@ -10,18 +10,19 @@ const dateContent = [
 
 ---
 
-<div class="code-text md:text-center items-center mb-5">
+<div class="code-text md:text-center items-center mb-5 md:mx-4 md:px-4">
     <div class="text-xl inline-block">
     <h1 class="section-title">Important Dates</h1>
 </div>
     {
        dateContent.map(date => (
-           
-                <ul class="flex justify-start items-center md:px-0 px-2">
-                    <li class="md:text-center md:text-xl"><span class="string">{date.name}</span> : <span class="number">{date.description}</span></li>
+       <div class="flex justify-center items-center">
+    <div class="md:w-[29rem] text-left">
+                <ul class="">
+                    <li class="md:text-left md:text-xl"><span class="string">{date.name}</span> : <span class="number">{date.description}</span></li>
                  
                 </ul>
-           
+           </div></div>
         ))
     }
    
