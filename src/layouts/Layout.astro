@@ -7,9 +7,10 @@ import'../assets/css/custom.css';
 
 import Footer from '../components/layout/Footer.astro';
 const { title } = Astro.props;
+
 ---
 
-<!doctype html>
+
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
@@ -18,7 +19,7 @@ const { title } = Astro.props;
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 		<link rel="icon" type="image/svg+xml" href="https://fossee.in/sites/all/themes/software_responsive_theme/img/logo.png" />
-   
+    <script is:inline src="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.js"></script>
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 	</head>
@@ -26,178 +27,11 @@ const { title } = Astro.props;
   
 </head>
 <body>
-
-
     <Nav />
     <div class="w-full block md:pt-10">
-
       <slot />
     </div>
-    <!-- <div class="fixed bottom-0 w-full"> -->
-
       <Footer />
-    <!-- </div> -->
-    <script is:inline src="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.js"></script>
-
 	</body>
 </html>
-<style is:global>
-  body{
-    overflow-x: hidden;
-    /* margin-bottom:30em; */
-  }
-  .code-text {
-      font-family: monospace;
-      color: #333;
-  }
 
-  /* Default code colors */
-  .code-text .keyword { color: #007bff; }  /* Blue */
-  .code-text .string { color: #dc3545; transition: 2s;}   /* Green */
-  .code-text .number { color: #28a745; transition: 2s;}   /* Red */
-  .code-text .comment { color: #6c757d; }  /* Grey */
-
-  /* Hover effect - changes colors */
-  .code-text:hover .keyword { color: #ff6347; }   /* Change blue to orange */
-  .code-text:hover .string { color: #ff1493; }    /* Change green to pink */
-  .code-text:hover .number { color: #ffa500; }    /* Change red to orange */
-  .code-text:hover .comment { color: #800080; }   /* Change grey to purple */
-
-  
-	:root {
-		--accent: 136, 58, 234;
-		--accent-light: 224, 204, 250;
-		--accent-dark: 49, 10, 101;
-		--accent-gradient: linear-gradient(
-			45deg,
-			rgb(var(--accent)),
-			rgb(var(--accent-light)) 30%,
-			rgb(0, 0, 0) 60%
-		);
-	}
-	html {
-		font-family: system-ui, sans-serif;
-		background: #ffffff;
-		color: #000000;
-    scroll-behavior: smooth;
-  
-	}
- 
-	code {
-		font-family:
-			Menlo,
-			Monaco,
-			Lucida Console,
-			Liberation Mono,
-			DejaVu Sans Mono,
-			Bitstream Vera Sans Mono,
-			Courier New,
-			monospace;
-	}
-  .section-title{
-   
-    color:#efd043;
-    color:#0a4850;
-    /* text-shadow: 4px 4px #0a4850; */
-    font-size: 3rem;
-    font-weight: 700;
-    padding: 2rem 2rem;
-    transition: 1.3s;
-}
-.section-title:hover{
-    
-    /* text-shadow: 4px 4px #efd043; */
-    font-size: 3.09rem;
-    /* padding: 2rem 1rem; */
-    font-weight: 700;
-   
-    
-}
-  @media screen and (max-width: 983px) {
-.section-title{
-    font-size:2rem;
-    padding: 1rem 2rem;
-    /* text-shadow: 2px 2px #0a4850; */
-}  
-.section-title:hover{
-  font-size: 2rem;
-    padding: 1rem 2rem;
-    font-weight: 700;
-}  
-  }
-
-</style>
-<script lang="js">
-    // ======= Sticky
-document.addEventListener('DOMContentLoaded', function () {
-  window.onscroll = function () {
-    const ud_header = document.querySelector('.ud-header');
-    const sticky = ud_header.offsetTop;
-    const logo = document.querySelectorAll('.header-logo');
-
-    if (window.pageYOffset > sticky) {
-      ud_header.classList.add('sticky-header');
-      ud_header.classList.remove('absolute', 'bg-transparent', 'z-40');
-    } else {
-      ud_header.classList.remove('sticky-header');
-      ud_header.classList.add('absolute', 'bg-transparent', 'z-40');
-    }
-
-    if(logo.length) {
-      // === logo change
-      if (ud_header.classList.contains('sticky-header')) {
-        document.querySelector(".header-logo").src = '/assets/logo/logo.svg';
-      } else {
-        document.querySelector('.header-logo').src = '/assets/logo/logo-white.svg';
-      }
-    }
-
-    if (document.documentElement.classList.contains('dark')) {
-      if (logo.length) {
-        // === logo change
-        if (ud_header.classList.contains('sticky-header')) {
-          document.querySelector('.header-logo').src = '/assets/logo/logo-white.svg';
-        } 
-      }
-    }
-
-    // show or hide the back-top-top button
-    const backToTop = document.querySelector('.back-to-top');
-    if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
-      backToTop.style.display = 'flex';
-    } else {
-      backToTop.style.display = 'none';
-    }
-  };
-});
-// ====== scroll top js
-function scrollTo(element, to = 0, duration = 500) {
-  const start = element.scrollTop;
-  const change = to - start;
-  const increment = 20;
-  let currentTime = 0;
-
-  const animateScroll = () => {
-    currentTime += increment;
-
-    const val = Math.easeInOutQuad(currentTime, start, change, duration);
-
-    element.scrollTop = val;
-
-    if (currentTime < duration) {
-      setTimeout(animateScroll, increment);
-    }
-  };
-
-  animateScroll();
-}
-
-Math.easeInOutQuad = function (t, b, c, d) {
-  t /= d / 2;
-  if (t < 1) return (c / 2) * t * t + b;
-  t--;
-  return (-c / 2) * (t * (t - 2) - 1) + b;
-};
-
-document.querySelector(".back-to-top").onclick = () => { scrollTo(document.documentElement); };
-</script>

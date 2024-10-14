@@ -25,9 +25,9 @@ var links = await Astro.glob("../content/resourcesPage/*.md");
       <div class="answer overflow-scroll h-32">
         {/* <Content /> */}
         {item.frontmatter.item && (
-            <ul class="list-disc ml-5 mt-2">
-              {item.frontmatter.item.map((p:any) => (
-                <li >
+            <ul class="ml-5 mt-2">
+              {item.frontmatter.item.map((p:any, index:number) => (
+                <li class="bg-none backdrop-blur-none text-white">{index+1}{". "}
                   <a href={p.link} class="text-blue-500 hover:underline" target="_blank">
                     {p.name}
                   </a>
@@ -39,7 +39,7 @@ var links = await Astro.glob("../content/resourcesPage/*.md");
     </div>
    )})
  }
-
+<!-- <div id="py" class="h-100">100vh</div> -->
  </div>
  </div>
 </section>
@@ -51,14 +51,14 @@ var links = await Astro.glob("../content/resourcesPage/*.md");
     color: #0077ff;
   }
 .bg-code{
-  background: url(../assets/img/bg-test.jpg) fixed;
+  background: url(../assets/img/code-bg.png) fixed;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: left;
 }
 .resources-main{
         margin: 3vh;
-        width: 60%;
+        width: 70%;
         overflow-y: hidden;
        /* backdrop-filter: blur(19px); */
        background-color: rgba(255, 255, 255, 0.2);
@@ -103,22 +103,26 @@ var links = await Astro.glob("../content/resourcesPage/*.md");
   }
 
   .question h3{
-    font-size: 1.1rem;
+    font-size: 1.3rem;
   }
 
   .question h3:hover{
     text-decoration: underline;
     color: #1662b8;
   }
+  .faq.active .question h3{
+    text-decoration:none;
+    color: #5ea9ff;
+  }
 
   .answer{
     max-height: 0;
     overflow-y: scroll;
     transition: max-height 0.8s ease;
-    /* scrollbar-color: rgb(102, 255, 0) rgb(255, 248, 185); */
+    scrollbar-color: rgb(144, 240, 255) rgb(134, 134, 134);
   }
 
-  .answer ul li{
+  /* .answer ul {
     padding: 1vh 3vh;
     font-size: 1rem;
     margin: 0;
@@ -127,7 +131,7 @@ var links = await Astro.glob("../content/resourcesPage/*.md");
     font-weight: 500;
     background-color: rgba(255, 255, 255, 0.247);
     backdrop-filter: blur(23px);
-  }
+  } */
 
   .answer ul li a{
     color: rgb(144, 240, 255);
@@ -211,7 +215,7 @@ faqs.forEach(faq => {
     } else {
       // Otherwise, close all accordions and open the clicked one
       faqs.forEach(f => f.classList.remove('active'));
-      faq.classList.add('active');
+      faq.classList.add('active', 'text-blue-300');
     }
   });
 });

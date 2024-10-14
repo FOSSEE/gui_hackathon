@@ -12,7 +12,7 @@ const faqContent = await Astro.glob("../content/faq/*.md");
              
               <div class="border-2 border-l-8 rounded-xl border-yellow-400 p-2 m-2 hover:shadow-indigo-300 shadow-lg transi h-32 overflow-y-scroll">
               <h4 class="font-bold">{index + 1}. {faq.frontmatter.question}</h4>
-              <p> <span>Answer: </span>{faq.frontmatter.answer}</p>
+              <p> <span class="font-semibold">Answer: </span>{faq.frontmatter.answer}</p>
               </div>
             
           )

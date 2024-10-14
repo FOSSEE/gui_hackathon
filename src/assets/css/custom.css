@@ -5,3 +5,88 @@
  *{
     font-family:myFirstFONT;
  }
+
+ body{
+   overflow-x: hidden;
+   /* margin-bottom:30em; */
+ }
+ .code-text {
+     font-family: monospace;
+     color: #333;
+ }
+
+ /* Default code colors */
+ .code-text .keyword { color: #007bff; }  /* Blue */
+ .code-text .string { color: #dc3545; transition: 2s;}   /* Green */
+ .code-text .number { color: #28a745; transition: 2s;}   /* Red */
+ .code-text .comment { color: #6c757d; }  /* Grey */
+
+ /* Hover effect - changes colors */
+ .code-text:hover .keyword { color: #ff6347; }   /* Change blue to orange */
+ .code-text:hover .string { color: #ff1493; }    /* Change green to pink */
+ .code-text:hover .number { color: #ffa500; }    /* Change red to orange */
+ .code-text:hover .comment { color: #800080; }   /* Change grey to purple */
+
+ 
+  :root {
+     --accent: 136, 58, 234;
+     --accent-light: 224, 204, 250;
+     --accent-dark: 49, 10, 101;
+     --accent-gradient: linear-gradient(
+        45deg,
+        rgb(var(--accent)),
+        rgb(var(--accent-light)) 30%,
+        rgb(0, 0, 0) 60%
+     );
+  }
+  html {
+     font-family: system-ui, sans-serif;
+     background: #ffffff;
+     color: #000000;
+   scroll-behavior: smooth;
+   scrollbar-color: #ffcc00 #0a4850;
+ 
+  }
+
+  code {
+     font-family:
+        Menlo,
+        Monaco,
+        Lucida Console,
+        Liberation Mono,
+        DejaVu Sans Mono,
+        Bitstream Vera Sans Mono,
+        Courier New,
+        monospace;
+  }
+ .section-title{
+  
+   color:#efd043;
+   color:#0a4850;
+   /* text-shadow: 4px 4px #0a4850; */
+   font-size: 3rem;
+   font-weight: 700;
+   padding: 2rem 2rem;
+   transition: 1.3s;
+}
+.section-title:hover{
+   
+   /* text-shadow: 4px 4px #efd043; */
+   font-size: 3.09rem;
+   /* padding: 2rem 1rem; */
+   font-weight: 700;
+  
+   
+}
+ @media screen and (max-width: 983px) {
+.section-title{
+   font-size:2rem;
+   padding: 1rem 2rem;
+   /* text-shadow: 2px 2px #0a4850; */
+}  
+.section-title:hover{
+ font-size: 2rem;
+   padding: 1rem 2rem;
+   font-weight: 700;
+}  
+ }
