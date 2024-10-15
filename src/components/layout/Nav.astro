@@ -3,18 +3,18 @@ import navLinks from "./nav-links.json";
 ---
 
 <script>
-
-document.addEventListener('DOMContentLoaded', () => {
-  addActiveClass(); 
-});
 // hashchange added because js not loading on same page 
 window.addEventListener('hashchange', () => {
   addActiveClass(); 
 });
+document.addEventListener('DOMContentLoaded', () => {
+  addActiveClass(); 
+});
+
 
 
 function addActiveClass() {
-    var currentUrl = window.location.pathname + window.location.hash; 
+    var currentUrl = window.location.pathname.replace(/\/+$/, '') + window.location.hash; 
     console.log(currentUrl);
 
     var menuItems = document.querySelectorAll('.nav-link');
