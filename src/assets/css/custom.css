@@ -1,10 +1,13 @@
-@font-face {
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+/* @font-face {
     font-family: myFirstFont;
     src: url(../font/Aller/Aller_Lt.ttf);
- }
- *{
+ } */
+
+ /* *{
     font-family:myFirstFONT;
- }
+ } */
 
  body{
    overflow-x: hidden;
@@ -15,17 +18,13 @@
      color: #333;
  }
 
- /* Default code colors */
- .code-text .keyword { color: #007bff; }  /* Blue */
- .code-text .string { color: #dc3545; transition: 2s;}   /* Green */
- .code-text .number { color: #28a745; transition: 2s;}   /* Red */
- .code-text .comment { color: #6c757d; }  /* Grey */
+ /* Default code colors  */
+
+ .code-text .number { color: #0a4850; transition: 2s;}   /* Red */
+
 
  /* Hover effect - changes colors */
- .code-text:hover .keyword { color: #ff6347; }   /* Change blue to orange */
- .code-text:hover .string { color: #ff1493; }    /* Change green to pink */
- .code-text:hover .number { color: #ffa500; }    /* Change red to orange */
- .code-text:hover .comment { color: #800080; }   /* Change grey to purple */
+
 
  
   :root {
@@ -40,7 +39,10 @@
      );
   }
   html {
-     font-family: system-ui, sans-serif;
+   font-family: "Roboto", sans-serif;
+   font-weight: 400;
+   font-style: normal;
+   
      background: #ffffff;
      color: #000000;
    scroll-behavior: smooth;
@@ -60,10 +62,13 @@
         monospace;
   }
  .section-title{
-  
+   font-family: "Poppins", sans-serif;
+   font-weight: 700;
+   font-style: normal;
    color:#efd043;
    color:#0a4850;
    /* text-shadow: 4px 4px #0a4850; */
+ 
    font-size: 3rem;
    font-weight: 700;
    padding: 2rem 2rem;
