@@ -54,7 +54,7 @@ const faqContent = await Astro.glob("../content/faq/*.md");
 <!-- Introduction -->
 <div id="home">
     <Hero />
-<div class="bg-[#fff6ee] md:mx-4 md:px-4 pb-5">
+<div class="bg-[#fff6d2] md:mx-4 md:px-4 pb-5">
     <div class="md:px-20 px-3">
     <h1 class="md:text-xl font-bold item-center text-center section-title mx-4 px-4" id="about">About</h1>
     <!-- <h2 class="welcome-heading"> Welcome to the Open Source Hardware IoT GIS Hackathon!</h2> -->
@@ -91,7 +91,7 @@ const faqContent = await Astro.glob("../content/faq/*.md");
 
 <div class="registration-container" id ="register">
     <h1 class="text-4xl font-bold item-center text-center section-title">Registration</h1>
-    <p class="text-center">Please click on the following button to register yourself for the competition</p>
+    <p class="text-center text-xl">Please click on the following button to register yourself for the competition</p>
     <div class="items-center text-center">
         <a href="https://docs.google.com/forms/d/e/1FAIpQLSeuAU18u2mXkVZLxPeOyxfylcEn3GXYGmVdSsg37bPsUlUahw/viewform?usp=pp_url" target="_blank"><button class="custom-btn btn-15">Register</button></a>
            
@@ -210,13 +210,14 @@ const faqContent = await Astro.glob("../content/faq/*.md");
   width: 15rem;
   height: 40px;
   /* padding: 10px 25px; */
-  font-family: 'Lato', sans-serif;
+ 
   font-weight: 500;
   background: transparent;
   cursor: pointer;
   transition: all 0.3s ease-in-out;
   position: relative;
   display: inline-block;
+  font-size: larger;
 }
 
     .btn-15 {
@@ -226,8 +227,8 @@ const faqContent = await Astro.glob("../content/faq/*.md");
   background: #fffdf3;
   box-shadow: 2px 2px 5px #ffe680, 2px 2px 5px #ffe57d inset;
   z-index: 1;
-  font-weight: 500;
-  transition: 0.9s ease-in-out;
+  font-weight: 900;
+  transition: 0.4s ease-in-out;
   
 }
 .btn-15:after {
@@ -242,12 +243,13 @@ const faqContent = await Astro.glob("../content/faq/*.md");
   border-radius: 18px;
   box-shadow:
    0 0 20px  #ffcc00;
-  transition: all 0.3s ease-in-out;
+  transition: all 0.4s ease-in-out;
   
 }
 .btn-15:hover {
   color: #0a4850;
   font-weight: 600;
+  font-size:x-large;
   
 }
 .btn-15:hover:after {
