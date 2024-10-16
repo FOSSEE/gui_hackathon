@@ -54,7 +54,7 @@ const faqContent = await Astro.glob("../content/faq/*.md");
 <!-- Introduction -->
 <div id="home">
     <Hero />
-<div class="bg-[#fff6d2] md:mx-4 md:px-4 pb-5">
+<div class="bg-[#fff6d2] md:px-4 pb-5">
     <div class="md:px-20 px-3">
     <h1 class="md:text-xl font-bold item-center text-center section-title mx-4 px-4" id="about">About</h1>
     <!-- <h2 class="welcome-heading"> Welcome to the Open Source Hardware IoT GIS Hackathon!</h2> -->
@@ -156,7 +156,7 @@ const faqContent = await Astro.glob("../content/faq/*.md");
 
 <!-- Core Team and Contact Us -->
 
-<div class="bg-[#d1e0ff] text-center" id ="contact">
+<div class="bg-[#e7fcff] text-center" id ="contact">
     <h1 class="section-title text-center">Contact Us
         <!-- <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24">
         <path fill="currentColor" d="M4.05 21q-.45 0-.75-.3t-.3-.75V15.9q0-.325.225-.587t.575-.363l3.45-.7q.35-.05.713.063t.587.337L10.9 17q.95-.55 1.8-1.213t1.625-1.437q.825-.8 1.513-1.662t1.187-1.788L14.6 8.45q-.2-.2-.275-.475T14.3 7.3l.65-3.5q.05-.325.325-.562T15.9 3h4.05q.45 0 .75.3t.3.75q0 3.125-1.362 6.175t-3.863 5.55t-5.55 3.863T4.05 21" />
@@ -178,15 +178,15 @@ const faqContent = await Astro.glob("../content/faq/*.md");
         })
         }
     </div>-->
-    <p>
+    <p class="text-xl">
         Please write to us in case of any queries regarding the Competition at:
     </p>
     <p class="email">
-        <svg xmlns="http://www.w3.org/2000/svg" class="!inline-block" width="32" height="32" viewBox="0 0 32 32" {...props}>
+        <svg xmlns="http://www.w3.org/2000/svg" class="!inline-block text-xl" width="32" height="32" viewBox="0 0 32 32" {...props}>
             <path fill="black" class="!inline-block" d="M28 6H4a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h24a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2m-2.2 2L16 14.78L6.2 8ZM4 24V8.91l11.43 7.91a1 1 0 0 0 1.14 0L28 8.91V24Z" />
         </svg>
         Email : 
-        <a href="mailto:contact-cfd@fossee.in" target="_blank">contact-cfd@fossee.in</a>
+        <a href="mailto:contact-cfd@fossee.in" class="text-xl" target="_blank">contact-cfd@fossee.in</a>
         <!-- / -->
         <!-- <a href="mailto:mohamedkasim@iitb.ac.in" target="_blank">mohamedkasim@iitb.ac.in</a> -->
     </p>

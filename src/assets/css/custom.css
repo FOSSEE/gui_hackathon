@@ -74,15 +74,7 @@
    padding: 2rem 2rem;
    transition: 1.3s;
 }
-.section-title:hover{
-   
-   /* text-shadow: 4px 4px #efd043; */
-   font-size: 3.09rem;
-   /* padding: 2rem 1rem; */
-   font-weight: 700;
-  
-   
-}
+
  @media screen and (max-width: 983px) {
 .section-title{
    font-size:2rem;
