@@ -47,7 +47,7 @@ const paraContent = await Astro.glob("../content/aboutpara/*.md");
 const coreTeamContent = await Astro.glob("../content/homePage/coreTeam/*.md");
 const partnerContent = await Astro.glob("../content/homePage/partner/*.md");
 const purposeContent = await Astro.glob("../content/homePage/purpose/*.md");
-const significanceContent = await Astro.glob("../content/homePage/significance/*.md");
+const significanceContent = await Astro.glob("../content/aboutpara/significance/*.md");
 const faqContent = await Astro.glob("../content/faq/*.md");
 ---
 
@@ -87,9 +87,21 @@ const faqContent = await Astro.glob("../content/faq/*.md");
  <div>
 <Dates />
 </div>
-<!-- Registration -->
 
-<div class="registration-container" id ="register">
+
+<div class="flex items-center justify-center" id ="eligibility">
+    <div class="">
+    <h1 class="text-4xl font-bold item-center text-center section-title">Eligibility</h1>
+   
+    <div class="regBtnContainer">
+        <p class="text-lg text-justify mx-3 px-3">Students pursuing B.E./B.Tech/M.Tech who seek to apply their programming skills in the development of scientific software. While having a background in Computer Science and Engineering/Information Technology or related fields with programming skills is preferable, we also consider students from other areas (ME, AE, EE, ECE etc.) or from other streams with strong programming skills.</p>
+    </div>
+</div>
+</div>
+
+</div>
+<!-- Registration -->
+<div class="registration-container   background-url" id ="register">
     <h1 class="text-4xl font-bold item-center text-center section-title">Registration</h1>
     <p class="text-center text-xl">Please click on the following button to register yourself for the competition</p>
     <div class="items-center text-center">
@@ -99,16 +111,6 @@ const faqContent = await Astro.glob("../content/faq/*.md");
     </div>
 </div>
 
-</div>
-<div class="flex items-center justify-center registration-container  background-url" id ="eligibility">
-    <div class="md:w-[70%] w-[100%]">
-    <h1 class="text-4xl font-bold item-center text-center section-title">Eligibility</h1>
-   
-    <div class="regBtnContainer">
-        <p class="text-lg text-justify mx-3 px-3">Students pursuing B.E./B.Tech/M.Tech who seek to apply their programming skills in the development of scientific software. While having a background in Computer Science and Engineering/Information Technology or related fields with programming skills is preferable, we also consider students from other areas (ME, AE, EE, ECE etc.) or from other streams with strong programming skills.</p>
-    </div>
-</div>
-</div>
 
 
 <!-- <Faq /> -->

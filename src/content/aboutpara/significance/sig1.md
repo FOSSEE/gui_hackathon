@@ -5,7 +5,7 @@ point:
   [
     "Sharpen your skills in Software Development",
     "Attend the Guidance Workshop for free",
-    "Receive Certificate  (for select participants whose problem statement solution will be shortlisted)",
+    "Receive Certificate (for select participants whose submissions are shortlisted)",
     "Opportunity to join FOSSEE, IIT Bombay, as Interns",
   ]
 end: "Join us on this extraordinary journey, where innovation knows no bounds. Together, let's turn ideas into actions and make a lasting impact on society and the environment. The Open Source Hardware IoT GIS Hackathon is your stage to shine, and the world is waiting to witness your brilliance."

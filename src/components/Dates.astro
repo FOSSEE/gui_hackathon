@@ -14,26 +14,29 @@ const dateContent = [
     <div class="text-xl inline-block">
     <h1 class="section-title">Important Dates</h1>
 </div>
-<div class="bg-[#0a4850] text-white md:rounded-full rounded-2xl">
-    {
-       dateContent.map(date => (
-       <div class="flex justify-center items-center">
+<div class="bg-[#0a4850] text-white md:rounded-full rounded-2xl py-3">
+  <div class="flex justify-center items-center">
     <div class=" text-left">
-                <ul class="">
-                    <li class="md:text-left md:text-xl">
+                
                       
                       <table>
-                        <tr><td>{date.name} : </td><td class="text-yellow-200">{date.description}</td></tr>
-                      </table>
-                      {/* <span class="string"></span> : <span class="number md:text-2xl"></span> */}
-                      </li>
-                 
-                </ul>
-           </div></div>
+    {
+       dateContent.map(date => (
+      
+                        <tr class="md:text-left md:text-xl"><td>{date.name} : </td><td class="text-yellow-200"><strong>{date.description}</strong></td></tr>
+                    
+                     
+                      
+         
         ))
-    }
-   
-    
+    }  </table>
+      </div></div>
+   <ul class="">
+     {/* <span class="string"></span> : <span class="number md:text-2xl"></span> */}
+    <li class="md:text-left md:text-xl">
+    </li>
+                 
+  </ul>
   </div>
     
     </div>
@@ -64,6 +67,9 @@ const dateContent = [
   from, to { border-color: transparent }
   50% { border-color: orange }
 }
-
+.section-title{
+  border-left: 23px solid #0a4850;
+  border-right: 23px solid #0a4850;
+}
 
     </style>
