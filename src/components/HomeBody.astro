@@ -209,8 +209,8 @@ const faqContent = await Astro.glob("../content/faq/*.md");
 }
 .custom-btn {
   color: #0a4850;
-  width: 15rem;
-  height: 40px;
+  width: 25rem;
+  height: 50px;
   /* padding: 10px 25px; */
  
   font-weight: 500;
@@ -223,11 +223,13 @@ const faqContent = await Astro.glob("../content/faq/*.md");
 }
 
     .btn-15 {
+        font-size:larger;
         color: #0a4850;
-  border: 2px solid#000000;
+        color: #ffcc00;
+  border: 2px solid#00e1ff;
   border-radius: 18px;
   background: #fffdf3;
-  box-shadow: 2px 2px 5px #ffe680, 2px 2px 5px #ffe57d inset;
+  box-shadow: 2px 2px 5px #007a8a, 2px 2px 5px #007a8a inset;
   z-index: 1;
   font-weight: 900;
   transition: 0.4s ease-in-out;
@@ -241,6 +243,7 @@ const faqContent = await Astro.glob("../content/faq/*.md");
   top: 0;
   right: 0;
  z-index: -1;
+ 
   background: #ffcc00;
   border-radius: 18px;
   box-shadow:
@@ -250,8 +253,10 @@ const faqContent = await Astro.glob("../content/faq/*.md");
 }
 .btn-15:hover {
   color: #0a4850;
+  border: 2px solid#fff5cb;
   font-weight: 600;
   font-size:x-large;
+  box-shadow: 2px 2px 5px #ffcc00, 2px 2px 5px #ffcc00 inset;
   
 }
 .btn-15:hover:after {
