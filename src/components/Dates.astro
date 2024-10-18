@@ -10,11 +10,11 @@ const dateContent = [
 
 ---
 
-<div class="md:text-center items-center mb-5 md:mx-4 md:px-4">
-    <div class="text-xl inline-block">
-    <h1 class="section-title">Important Dates</h1>
+<div class="md:text-center text-center items-center mb-5 md:mx-4 xl:px-4">
+    <div class="text-xl">
+    <h1 class="section-title"><span class="banner">Important Dates</span></h1>
 </div>
-<div class="bg-[#0a4850] text-white md:rounded-full rounded-2xl py-3">
+<div class="bg-[#0a4850] text-white 2xl:rounded-full rounded-2xl py-3">
   <div class="flex justify-center items-center">
     <div class=" text-left">
                 
@@ -23,7 +23,7 @@ const dateContent = [
     {
        dateContent.map(date => (
       
-                        <tr class="md:text-left md:text-xl"><td>{date.name} : </td><td class="text-yellow-200"><strong>{date.description}</strong></td></tr>
+                        <tr class="md:text-left md:text-xl"><td class="pr-3 border-b-2">{date.name}  </td><td class="text-yellow-200 border-b-2"><strong>{date.description}</strong></td></tr>
                     
                      
                       
@@ -67,9 +67,18 @@ const dateContent = [
   from, to { border-color: transparent }
   50% { border-color: orange }
 }
-.section-title{
+.banner{
   border-left: 23px solid #0a4850;
   border-right: 23px solid #0a4850;
+ border-bottom:23px solid #0a4850;
 }
 
+/* @media  (max-width:456px) {
+  .section-title{
+  border-left: 0px solid #0a4850;
+  border-right: 0px solid #0a4850;
+} */
+/* .section-title table tr { }
+
+} */
     </style>
