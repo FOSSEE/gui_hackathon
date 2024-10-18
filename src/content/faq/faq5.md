@@ -1,5 +1,5 @@
 ---
 Number: 5
 question: "What software will be used for the Hackathon?"
-answer: "Information to be available soon"
+answer: "The participants are free to use any software/technology that they are comfortable with for their submissions in the competition."
 ---
