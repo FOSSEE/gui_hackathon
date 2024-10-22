@@ -221,7 +221,12 @@ const faqContent = await Astro.glob("../content/faq/*.md");
   display: inline-block;
   font-size: larger;
 }
-
+@media screen and (max-width:498px) {
+    .custom-btn {
+        width: 20rem;
+        height: 50px;
+    }
+}
     .btn-15 {
         font-size:larger;
         color: #0a4850;
