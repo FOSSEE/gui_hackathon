@@ -16,7 +16,7 @@ const props = Astro.props
         <div class="resources-main backdrop-blur-xl">
             <div class="">
                 <h1 class="section-title items-center text-center">Problem Statements</h1>
-                <h4 class=" text-white m-3">The participants can pick any one of the given problem statements for their submission for the competitions. In each of the ideas, the minimum requirements that are to be met are written, and the participants are also free to add more features that they see fit for the topic.  </h4>
+                <h4 class="text-xl text-white m-3">The participants can pick any one of the given problem statements for their submission for the competitions. In each of the ideas, the minimum requirements that are to be met are written, and the participants are also free to add more features that they see fit for the topic.  </h4>
             </div>
     <div class="bg-transparent">
     {
@@ -32,7 +32,7 @@ const props = Astro.props
           </div>
           <div class="answer overflow-scroll h-100">
             {/* <Content /> */}
-            <p>{item.frontmatter.para}</p>
+            <p class="text-xl ml-2 pl-2">{item.frontmatter.para}</p>
             {item.frontmatter.item && (
                 <ul class="ml-5 mt-2 list-disc">
                   {item.frontmatter.item.map((p:any, index:number) => (
@@ -53,19 +53,25 @@ const props = Astro.props
      </div>
      </div>
      <div class="resources-main px-5" id="submission-guidelines">
-        <h1 class="section-title items-center text-center">Submission Guidelines:</h1>
+        <h1 class="section-title items-center text-center">Submission Guidelines</h1>
+        <br />
 <div class="text-white">
-<h4 class="text-3xl">Follow the following steps for creating your submission:</h4>
-<ol class=" list-decimal list-inside">
+<h4 class="text-2xl">Follow the following steps for creating your submission:</h4>
+<ol class=" list-decimal list-inside text-lg m-5 p-5">
 <li>Create a zip archive in the following format <strong>&lt;Problem Statement Number&gt;_&lt;Your First Name&gt;.zip.</strong> For example, If your name is Diptangshu Dey, and you have attempted the Interactive 3D Object Viewer Problem, your submission should be named &ldquo;7_Diptangshu.zip&rdquo;.&nbsp;</li>
 <li>Inside the archive, <strong>Include the instructions to run your application</strong>, and the steps to install the software required for the same.&nbsp;</li>
 <li>Alongside the installation instructions, create a folder with the name <strong>&ldquo;Submission&rdquo;</strong>, and the actual code of your application should be placed inside this folder.&nbsp;</li>
 </ol>
-<p>Your submission file structure should look like this:<br /><br /></p>
+<br />
+<h4 class="text-2xl">Your submission file structure should look like this:</h4>
+<div>
+<div class="border inline-block bg-black m-5 p-5">
 <p>7_Diptangshu</p>
 <p>| &nbsp; Installation_Instructions.md</p>
 <p>|---Submission/</p>
 <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| &nbsp; &lt;Project Files&gt;</p>
+</div>
+</div>
 </div>
     </div>
     </section>
@@ -137,7 +143,7 @@ const props = Astro.props
     
       .question h3:hover{
         text-decoration: underline;
-        color: #1662b8;
+        color: #2088ff;
       }
       .faq.active .question h3{
         text-decoration:none;
@@ -203,7 +209,7 @@ const props = Astro.props
       }
       @media screen and (max-width: 768px){
         .faq{
-        max-width: 90%;
+        max-width: 100%;
         cursor: pointer;
         border: 1px solid #f6f4f4;
       }
@@ -230,7 +236,7 @@ const props = Astro.props
         });
     
         lists.forEach((list)=>{
-          list.classList.add("py-1", "px-3", "text-base", "m-0", "text-black", "font-bold",);
+          list.classList.add("py-1", "px-3", "text-base", "m-0", "text-black", "font-normal","text-lg");
         })
     });
           
@@ -244,7 +250,7 @@ const props = Astro.props
         } else {
           // Otherwise, close all accordions and open the clicked one
           faqs.forEach(f => f.classList.remove('active'));
-          faq.classList.add('active', 'text-blue-300');
+          faq.classList.add('active', 'text-[#50ebff]');
         }
       });
     });
