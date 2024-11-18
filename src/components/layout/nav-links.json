@@ -2,7 +2,7 @@
  
     { "label": "About", "href": "/#about" },
     {"label": "Problem-Statement", "href": "/problem-statement"},
-    {"label": "Submission Guidelines", "href": "/problem-statement#submission-guidelines"},
+    {"label": "Submission Guidelines", "href": "/problem-statement/#submission-guidelines"},
     {"label": "Register", "href": "/#register"},
   
     {"label": "FAQs", "href": "/faq"},
