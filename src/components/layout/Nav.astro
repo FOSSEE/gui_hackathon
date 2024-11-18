@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 function addActiveClass() {
   if(window.location.hash){
-    var currentUrl = window.location.pathname + window.location.hash; 
+    var currentUrl = window.location.pathname + window.location.hash.replace(/\/+$/, ''); 
     console.log(currentUrl);
   }
   else{
@@ -25,7 +25,7 @@ function addActiveClass() {
 
     menuItems.forEach(item => {
         var menuItemUrl = item.getAttribute('href'); 
-        // console.log(menuItemUrl); 
+        console.log(menuItemUrl); 
 
      
         if (currentUrl === menuItemUrl || window.location.hash === menuItemUrl) {
