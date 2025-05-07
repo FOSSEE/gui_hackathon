@@ -5,11 +5,12 @@ import Card from '../components/Card.astro';
 ---
 
 <Layout title="GUI Hackathon">
-<div class="text-[#4d0081] border-b-4 border-sky-100 background-url mt-10" id ="result">
+<div class="text-[#4d0081] background-url mt-10" id ="result">
     <h1 class="text-4xl font-bold item-center text-center section-title">Results</h1>
    </div>
-<table>
-<thead>
+<div class="relative overflow-x-auto">
+<table class="text-xl mt-5 mb-10">
+<thead class="uppercase">
 <tr>
 <th>Sr. No.</th>
 <th>Name</th>
@@ -39,4 +40,27 @@ import Card from '../components/Card.astro';
 </tr>
 </tbody>
 </table>
+
+<style>
+  table {
+            width: 80%;
+            border-collapse: collapse;
+            margin: 20px auto;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        th {
+            background-color: #0a4850;
+            color: #ffe600;
+            padding: 12px;
+            text-align: left;
+        }
+        td {
+            padding: 12px;
+            border: 1px solid #0a4850;
+        }
+        td:first-child {
+            text-align: center;
+        }
+</style>
+
 </Layout>
